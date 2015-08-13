@@ -74,3 +74,33 @@ button2.addEventListener('click', function () {
   document.getElementById("trip-answer-alert").innerHTML = answer;
   });
 
+// BMI calculator
+
+
+var button3 = document.getElementById('bmi-calc');
+
+button3.addEventListener('click', function () {
+
+  var mass = parseFloat(document.getElementById("bmi-mass").value);
+
+  console.log(mass)
+
+  var height = parseFloat(document.getElementById("bmi-height").value);
+  console.log(height)
+
+  var units = document.getElementById("bmi-units").value;
+  console.log(units)
+
+   var bmi = mass / Math.pow(height, 2);
+      bmi = Math.round(bmi * 100) / 100; 
+    
+  var bmiAnswer = document.getElementById("bmi-answer")
+
+    answer = bmi
+
+      bmiAnswer.className = "show"
+    
+       document.getElementById("bmi-answer-alert").innerHTML = answer;
+  });
+
+// mortgage calculator
