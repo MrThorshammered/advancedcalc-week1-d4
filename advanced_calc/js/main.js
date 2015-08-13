@@ -11,22 +11,30 @@ button1.addEventListener('click', function answer () {
     var num2 = parseFloat(document.getElementById("basic-num-2").value);
 
     var op = document.getElementById("basic-operation");
-    
+
       switch(op){
       case "plus":
-        answer = num1 + num2;
+       var answer = num1 + num2;
         break;
       case "minus":
-        answer = num1 - num2;
+       var answer = num1 - num2;
         break;
       case "divided by":
-        answer = num1 / num2;
+       var answer = num1 / num2;
         break;
       case "multiplied by":
-        answer = num1 * num2;
+       var answer = num1 * num2;
         break;
     };
+  var basicAnswer = document.getElementById("basic-answer")
 
+     if (answer === true) {
+
+      basicAnswer.className = "show"
+  }else {
+      basicAnswer.className = "hide"
+  }
+  }
 
 }
 
