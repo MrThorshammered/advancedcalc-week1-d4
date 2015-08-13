@@ -4,38 +4,38 @@ console.log("hello, mike");
 
 var button1 = document.getElementById('basic-calc');
 
-button1.addEventListener('click', function answer () {
+button1.addEventListener('click', function () {
 
 	var num1 = parseFloat(document.getElementById("basic-num-1").value);
 
-    var num2 = parseFloat(document.getElementById("basic-num-2").value);
+console.log(num1)
 
-    var op = document.getElementById("basic-operation");
+    var num2 = parseFloat(document.getElementById("basic-num-2").value);
+    console.log(num2)
+
+    var op = document.getElementById("basic-operation").value;
+    console.log(op)
 
       switch(op){
-      case "plus":
+      case "+":
        var answer = num1 + num2;
-        break;
-      case "minus":
+       console.log(answer)
+       break;
+      case "-":
        var answer = num1 - num2;
         break;
-      case "divided by":
+      case "/":
        var answer = num1 / num2;
         break;
-      case "multiplied by":
+      case "*":
        var answer = num1 * num2;
         break;
     };
   var basicAnswer = document.getElementById("basic-answer")
 
-     if (answer === true) {
-
       basicAnswer.className = "show"
-  }else {
-      basicAnswer.className = "hide"
-  }
-  }
+       document.getElementById("basic-answer-alert").innerHTML = answer;
+  });
 
-}
 
 
