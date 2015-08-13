@@ -100,7 +100,42 @@ button3.addEventListener('click', function () {
 
       bmiAnswer.className = "show"
     
-       document.getElementById("bmi-answer-alert").innerHTML = answer;
+       document.getElementById("bmi-answer-alert").innerHTML = " your BMI is " + answer;
   });
 
 // mortgage calculator
+
+var button4 = document.getElementById('mortgage-calc');
+
+button4.addEventListener('click', function () {
+
+  var loan = parseFloat(document.getElementById("mortgage-loan").value);
+
+  console.log(loan)
+
+  var apr = parseFloat(document.getElementById("mortgage-apr").value)/100/12;
+  console.log(apr)
+
+  var term = document.getElementById("mortgage-term").value;
+  console.log(term)
+
+  var temp = Math.pow((1 + apr), term);
+      var payment = loan * apr * temp / (temp - 1);
+      payment = Math.round(payment * 100) / 100;
+    
+  var mortgageAnswer = document.getElementById("mortgage-answer")
+
+    answer = payment
+
+      mortgageAnswer.className = "show"
+    
+       document.getElementById("mortgage-answer-alert").innerHTML = "your monthly repayments will be " + answer;
+  });
+
+
+
+
+
+
+
+
