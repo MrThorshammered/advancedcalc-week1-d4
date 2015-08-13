@@ -1,6 +1,4 @@
-console.log("hello, mike");
-
-
+// basic calculator
 
 var button1 = document.getElementById('basic-calc');
 
@@ -8,13 +6,13 @@ button1.addEventListener('click', function () {
 
 	var num1 = parseFloat(document.getElementById("basic-num-1").value);
 
-console.log(num1)
+  console.log(num1)
 
-    var num2 = parseFloat(document.getElementById("basic-num-2").value);
-    console.log(num2)
+  var num2 = parseFloat(document.getElementById("basic-num-2").value);
+  console.log(num2)
 
-    var op = document.getElementById("basic-operation").value;
-    console.log(op)
+  var op = document.getElementById("basic-operation").value;
+  console.log(op)
 
       switch(op){
       case "+":
@@ -33,9 +31,46 @@ console.log(num1)
     };
   var basicAnswer = document.getElementById("basic-answer")
 
-      basicAnswer.className = "show"
+  		basicAnswer.className = "show"
+  	
        document.getElementById("basic-answer-alert").innerHTML = answer;
   });
 
+// trip calculator
 
+var button2 = document.getElementById('trip-calc');
+
+button2.addEventListener('click', function () {
+
+  var speed = parseFloat(document.getElementById("trip-speed").value);
+
+  console.log(speed)
+
+  var mpg = parseFloat(document.getElementById("trip-mpg").value);
+  console.log(mpg)
+
+  var dist = parseFloat(document.getElementById("trip-distance").value);
+
+  console.log(dist)
+
+  var cost = parseFloat(document.getElementById("trip-cost").value);
+
+  console.log(cost)
+
+      var time = dist / speed;
+      time = Math.round(time * 100) / 100;
+
+      var actualMPG = (mpg > 60) ? Math.max(0, mpg - (speed - 60) * 2) : mpg;
+
+      var cost = (dist / actualMPG * cost);
+      cost = Math.round(cost * 100) / 100;
+
+      var answer = "Your trip will take " + time + " hours and cost $" + cost
+      
+  var tripAnswer = document.getElementById("trip-answer")
+
+  tripAnswer.className = "show"
+    
+  document.getElementById("trip-answer-alert").innerHTML = answer;
+  });
 
